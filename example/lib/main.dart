@@ -39,30 +39,33 @@ class _MyHomePageState extends State<MyHomePage> {
           child: _getPage(currentPage),
         ),
       ),
-      bottomNavigationBar: BottomNavigationLy(
-        tabs: [
-          TabData(
-              iconData: Icons.home,
-              title: "Home",
-              onclick: () {
-                final BottomNavigationLyState fState =
-                    bottomNavigationKey.currentState;
-                fState.setPage(2);
-              }),
-          TabData(
-              iconData: Icons.search,
-              title: "Search",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => SecondPage()))),
-          TabData(iconData: Icons.shopping_cart, title: "Basket")
-        ],
-        initialSelection: 1,
-        key: bottomNavigationKey,
-        onTabChangedListener: (position) {
-          setState(() {
-            currentPage = position;
-          });
-        },
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 40.0, color: Colors.white))),
+        child: BottomNavigationLy(
+          tabs: [
+            TabData(
+                iconData: Icons.home,
+                title: "Home",
+                onclick: () {
+                  final BottomNavigationLyState fState =
+                      bottomNavigationKey.currentState;
+                  fState.setPage(2);
+                }),
+            TabData(
+                iconData: Icons.search,
+                title: "Search",
+                onclick: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => SecondPage()))),
+            TabData(iconData: Icons.shopping_cart, title: "Basket")
+          ],
+          initialSelection: 0,
+          key: bottomNavigationKey,
+          onTabChangedListener: (position) {
+            setState(() {
+              currentPage = position;
+            });
+          },
+        ),
       ),
       drawer: Drawer(
         child: ListView(

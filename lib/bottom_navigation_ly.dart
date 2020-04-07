@@ -3,6 +3,7 @@ library bottom_navigation_ly;
 import 'package:bottom_navigation_ly/internal/tab_item.dart';
 import 'package:bottom_navigation_ly/paint/half_clipper.dart';
 import 'package:bottom_navigation_ly/paint/half_painter.dart';
+import 'package:bottom_navigation_ly/paint/normal_curve_painter.dart';
 import 'package:flutter/material.dart';
 
 const double CIRCLE_SIZE = 60;
@@ -120,7 +121,7 @@ class BottomNavigationLyState extends State<BottomNavigationLy>
           height: BAR_HEIGHT,
           decoration: BoxDecoration(color: barBackgroundColor, boxShadow: [
             BoxShadow(
-                color: Colors.black12, offset: Offset(0, -1), blurRadius: 8)
+                color: Colors.black12, offset: Offset(0, -10), blurRadius: 8, spreadRadius: -8)
           ]),
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -144,7 +145,7 @@ class BottomNavigationLyState extends State<BottomNavigationLy>
           ),
         ),
         Positioned.fill(
-          top: -(CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
+          top: -(BAR_HEIGHT + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
           child: Container(
             child: AnimatedAlign(
               duration: Duration(milliseconds: ANIM_DURATION),
@@ -183,17 +184,20 @@ class BottomNavigationLyState extends State<BottomNavigationLy>
                               )),
                         ),
                         SizedBox(
-                            height: ARC_HEIGHT,
-                            width: ARC_WIDTH,
-                            child: CustomPaint(
-                              painter: HalfPainter(barBackgroundColor),
-                            )),
+                          height: ARC_HEIGHT,
+                          width: ARC_WIDTH,
+                          child: CustomPaint(
+                            painter: HalfPainter(barBackgroundColor),
+                          ),
+                        ),
                         SizedBox(
                           height: CIRCLE_SIZE,
                           width: CIRCLE_SIZE,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle, color: circleColor),
+                          child: CustomPaint(
+                            painter: NormalCurvePainter(
+                              color: circleColor,
+                              circleSize: CIRCLE_SIZE,
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(0.0),
                               child: AnimatedOpacity(
@@ -207,7 +211,7 @@ class BottomNavigationLyState extends State<BottomNavigationLy>
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
