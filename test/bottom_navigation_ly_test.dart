@@ -1,4 +1,4 @@
-import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
+import 'package:bottom_navigation_ly/bottom_navigation_ly.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -13,7 +13,7 @@ void main() {
   }
 
   testWidgets('Fancy Nav has correct tabs', (WidgetTester tester) async {
-    FancyBottomNavigation fn = FancyBottomNavigation(
+    BottomNavigationLy fn = BottomNavigationLy(
       tabs: [
         TabData(iconData: Icons.home, title: "Home"),
         TabData(iconData: Icons.search, title: "Search")
@@ -41,7 +41,7 @@ void main() {
   });
 
   testWidgets('Clicking icon moves the circle', (WidgetTester tester) async {
-    FancyBottomNavigation fn = FancyBottomNavigation(
+    BottomNavigationLy fn = BottomNavigationLy(
       tabs: [
         TabData(iconData: Icons.home, title: "Home"),
         TabData(iconData: Icons.search, title: "Search")

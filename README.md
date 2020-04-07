@@ -1,6 +1,6 @@
-# FancyBottomNavigation
+# BottomNavigationLy
 
-![Fancy Gif](https://github.com/tunitowen/fancy_bottom_navigation/blob/master/fancy_gif.gif "Fancy Gif")
+![Fancy Gif](https://github.com/tunitowen/bottom_navigation_ly/blob/master/fancy_gif.gif "Fancy Gif")
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ Add the plugin (pub coming soon):
 ```yaml
 dependencies:
   ...
-  fancy_bottom_navigation: ^0.3.2
+  bottom_navigation_ly: ^0.3.2
 ```
 
 ## Limitations
@@ -19,7 +19,7 @@ For now this is limited to more than 1 tab, and less than 5. So 2-4 tabs.
 
 Adding the widget
 ```dart
-bottomNavigationBar: FancyBottomNavigation(
+bottomNavigationBar: BottomNavigationLy(
     tabs: [
         TabData(iconData: Icons.home, title: "Home"),
         TabData(iconData: Icons.search, title: "Search"),
@@ -57,7 +57,7 @@ bottomNavigationBar: FancyBottomNavigation(
 The bar will attempt to use your current theme out of the box, however you may want to theme it. Here are the attributes:
 
 
-![Fancy Theming](https://github.com/tunitowen/fancy_bottom_navigation/blob/master/fancy_theming.png "Fancy Theming")
+![Fancy Theming](https://github.com/tunitowen/bottom_navigation_ly/blob/master/fancy_theming.png "Fancy Theming")
 
 ## Programmatic Selection
 

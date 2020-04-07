@@ -1,8 +1,8 @@
-library fancy_bottom_navigation;
+library bottom_navigation_ly;
 
-import 'package:fancy_bottom_navigation/internal/tab_item.dart';
-import 'package:fancy_bottom_navigation/paint/half_clipper.dart';
-import 'package:fancy_bottom_navigation/paint/half_painter.dart';
+import 'package:bottom_navigation_ly/internal/tab_item.dart';
+import 'package:bottom_navigation_ly/paint/half_clipper.dart';
+import 'package:bottom_navigation_ly/paint/half_painter.dart';
 import 'package:flutter/material.dart';
 
 const double CIRCLE_SIZE = 60;
@@ -12,8 +12,8 @@ const double CIRCLE_OUTLINE = 10;
 const double SHADOW_ALLOWANCE = 20;
 const double BAR_HEIGHT = 60;
 
-class FancyBottomNavigation extends StatefulWidget {
-  FancyBottomNavigation(
+class BottomNavigationLy extends StatefulWidget {
+  BottomNavigationLy(
       {@required this.tabs,
       @required this.onTabChangedListener,
       this.key,
@@ -39,10 +39,10 @@ class FancyBottomNavigation extends StatefulWidget {
   final Key key;
 
   @override
-  FancyBottomNavigationState createState() => FancyBottomNavigationState();
+  BottomNavigationLyState createState() => BottomNavigationLyState();
 }
 
-class FancyBottomNavigationState extends State<FancyBottomNavigation>
+class BottomNavigationLyState extends State<BottomNavigationLy>
     with TickerProviderStateMixin, RouteAware {
   IconData nextIcon = Icons.search;
   IconData activeIcon = Icons.search;

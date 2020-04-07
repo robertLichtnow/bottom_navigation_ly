@@ -1,5 +1,5 @@
 import 'package:example/second_page.dart';
-import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
+import 'package:bottom_navigation_ly/bottom_navigation_ly.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -39,13 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: _getPage(currentPage),
         ),
       ),
-      bottomNavigationBar: FancyBottomNavigation(
+      bottomNavigationBar: BottomNavigationLy(
         tabs: [
           TabData(
               iconData: Icons.home,
               title: "Home",
               onclick: () {
-                final FancyBottomNavigationState fState =
+                final BottomNavigationLyState fState =
                     bottomNavigationKey.currentState;
                 fState.setPage(2);
               }),
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               color: Theme.of(context).accentColor,
               onPressed: () {
-                final FancyBottomNavigationState fState =
+                final BottomNavigationLyState fState =
                     bottomNavigationKey.currentState;
                 fState.setPage(2);
               },
